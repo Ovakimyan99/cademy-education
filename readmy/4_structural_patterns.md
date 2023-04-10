@@ -33,17 +33,17 @@ class Databse {
     constructor() {
         this.users = [];
     }
-    
+
     static create(...args) {
         return new Database(...args);
     }
-    
+
     saveNewUserData(user) {
         this.users.push(
             JSON.parse(JSON.stringify(user))
         );
     }
-    
+
     findOneUserByOwnId(userId) {
         return this.users.find(user => user.id === userId);
     }
