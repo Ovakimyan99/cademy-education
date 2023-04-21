@@ -13,6 +13,10 @@
     "type": "git",
     "url": "git+https://github.com/Ovakimyan99/cademy-education.git"
   },
+  "alias": {
+    "component": "./src/component/",
+    "core": "./src/core/"
+  },
   "keywords": [],
   "author": "Tigran Ovakimyan<tigr.kman@gmail.com>",
   "license": "ISC",
@@ -30,6 +34,7 @@
     "@babel/runtime": "7.21.0",
     "babel-loader": "9.1.2",
     "chai": "4.3.7",
+    "html-loader": "4.2.0",
     "html-webpack-plugin": "5.5.0",
     "mocha": "10.2.0",
     "nodemon": "2.0.22",
