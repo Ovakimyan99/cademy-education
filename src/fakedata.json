@@ -52,7 +52,7 @@
 
             "content": {
                 "tags": ["forest", "travel", "journey", "holiday"],
-                "image": "https://clck.ru/32k7ff",
+                "image": ["https://clck.ru/32k7ff", "https://clck.ru/32k7ff", "https://clck.ru/32k7ff", "https://clck.ru/32k7ff"],
                 "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus fugiat, aliquam! In fugit id sint, nam repellendus possimus sit itaque aspernatur modi facere earum mollitia veritatis officia quo iste nisi."
             },
 

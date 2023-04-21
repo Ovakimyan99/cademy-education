@@ -1,4 +1,5 @@
 import template from './template.html';
+import imageTemplate from '../PostContent/postImageTemplate.html';
 import Component from 'Core/Component';
 import PostComment from 'Components/PostComment';
 import PostHeader from 'Components/PostHeader';
@@ -6,7 +7,9 @@ import PostContent from 'Components/PostContent';
 
 export default class Post extends Component {
     constructor(options = {}) {
-        super('post');
+        const componentName = options.componentName || 'post';
+
+        super(componentName);
 
         this.user = {
             name: options.user.name,
@@ -31,12 +34,6 @@ export default class Post extends Component {
         }));
     }
 
-    get PostCommentsInstance() {
-        return new PostComment({
-            comments: this.comments,
-        })
-    }
-
     get PostHeaderInstance() {
         return new PostHeader({
             user: this.user,
@@ -46,6 +43,13 @@ export default class Post extends Component {
     get PostContentInstance() {
         return new PostContent({
             content: this.content,
+            imageTemplate,
+        })
+    }
+
+    get PostCommentsInstance() {
+        return new PostComment({
+            comments: this.comments,
         })
     }
 

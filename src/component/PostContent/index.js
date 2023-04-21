@@ -1,11 +1,13 @@
 import template from './template.html';
 import Component from 'Core/Component';
+import PostImage from 'Components/PostImage';
 
 export default class PostContent extends Component {
     constructor(contentData = {}) {
         super('postContent');
 
         this.content = contentData.content;
+        this.imageTemplate = contentData.imageTemplate;
     }
 
     get tagTemplate() {
@@ -14,9 +16,16 @@ export default class PostContent extends Component {
         return this.content.tags.reduce((html, tag) => html + `${template('#', tag)}`, '');
     }
 
+    get imageContentTemplate() {
+        return new PostImage({
+            images: this.content.image,
+            template: this.imageTemplate,
+        })
+    }
+
     get getHtmlTemplate() {
         return template
-            .replace(/{%post.image%}/g, this.content.image)
+            .replace(/{%PostImage%}/g, this.imageContentTemplate.getHtmlTemplate)
             .replace(/{%post.description%}/g, this.content.description)
             .replace(/{%post.tags%}/g, this.tagTemplate)
         ;
